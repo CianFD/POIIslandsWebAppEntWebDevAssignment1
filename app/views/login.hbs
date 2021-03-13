@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' href='global.css'>
+</head>
+<body>
+<div class="uk-flex uk-flex-center uk-flex-middle uk-grid-small" uk-grid>
+    {{> title-card title="Donation Services Inc." subTitle="Please log in"}}
+    {{> welcome-menu }}
+</div>
+<div class="uk-container uk-margin">
+    <div class="uk-child-width-expand uk-flex-center uk-flex-middle uk-text-center" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large">
+                <h3 class="uk-card-title uk-text-center">Welcome back!</h3>
+                <form action="/login" method="POST">
+                    <div class="uk-margin uk-text-left">
+                        <label class="uk-form-label" for="form-stacked-text">Email</label>
+                        <div class="uk-inline uk-width-1-1">
+                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                            <input class="uk-input uk-form-large" type="text" name="email">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <div class="uk-inline uk-width-1-1">
+                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                            <input class="uk-input uk-form-large" type="password" name="password">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Login</button>
+                    </div>
+                    <div class="uk-text-left uk-text-small">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <img width="300" src="images/ireland.jpg">
+        </div>
+    </div>
+</div>
+</body>
+</html>
