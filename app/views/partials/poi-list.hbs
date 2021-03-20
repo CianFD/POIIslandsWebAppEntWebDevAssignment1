@@ -5,12 +5,14 @@
     </caption>
     <thead>
       <th>Name</th>
+      <th>Description</th>
       <th>Creator</th>
     </thead>
     <tbody class="uk-text-left">
       {{#each pois}}
         <tr>
           <td>{{name}}</td>
+          <td>{{description}}</td>
           <td> {{creator.firstName}} {{creator.lastName}} </td>
         </tr>
       {{/each}}
