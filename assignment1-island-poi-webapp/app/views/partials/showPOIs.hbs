@@ -1,13 +1,12 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
   <table class="uk-table">
     <caption>
-      POIs Added
+      The Islands of Ireland - Places of Interest
     </caption>
     <thead>
       <th>Name</th>
       <th>Description</th>
       <th>Category</th>
-      <th>Creator</th>
     </thead>
     <tbody class="uk-text-left">
       {{#each pois}}
@@ -15,7 +14,6 @@
           <td>{{name}}</td>
           <td>{{description}}</td>
           <td>{{category}}</td>
-          <td> {{creator.firstName}} {{creator.lastName}} </td>
         </tr>
       {{/each}}
     </tbody>

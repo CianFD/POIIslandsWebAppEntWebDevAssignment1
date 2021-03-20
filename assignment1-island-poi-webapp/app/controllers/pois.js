@@ -4,8 +4,12 @@ const User = require("../models/user");
 
 const POIs = {
   home: {
-    handler: function(request, h) {
-      return h.view("home", { title: "Home" });
+    handler: async function(request, h) {
+      const pois = await POI.find().populate().lean();
+      return h.view("home", {
+        title: "Home",
+        pois: pois
+      });
     }
   },
   report: {
@@ -30,9 +34,9 @@ const POIs = {
           creator: user._id
         });
         await newPOI.save();
-        return h.redirect("/report");
+        return h.redirect("/home");
       } catch (err) {
-        return h.view("main", { errors: [{ message: err.message }] });
+        return h.view("home", { errors: [{ message: err.message }] });
       }
     }
   }
