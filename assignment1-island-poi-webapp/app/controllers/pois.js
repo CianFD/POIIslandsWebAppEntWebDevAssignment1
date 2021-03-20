@@ -26,9 +26,10 @@ const POIs = {
         const newPOI = new POI({
           name: data.name,
           description: data.description,
+          category: data.category,
           creator: user._id
         });
-        await newDonation.save();
+        await newPOI.save();
         return h.redirect("/report");
       } catch (err) {
         return h.view("main", { errors: [{ message: err.message }] });
