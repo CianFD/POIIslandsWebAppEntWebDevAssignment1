@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Category</th>
+      <th></th>
     </thead>
     <tbody class="uk-text-left">
       {{#each pois}}
@@ -14,6 +15,11 @@
           <td>{{name}}</td>
           <td>{{description}}</td>
           <td>{{category}}</td>
+          <td>
+              <a href="/editPOI" class="uk-card uk-card-small uk-card-hover uk-padding-small">
+                  <i class="fad fa-edit-fa-3x" style="color:rgb(72,215,9)" title="Edit POI" pos="bottom" uk-tooltip></i>
+              </a>
+          </td>
         </tr>
       {{/each}}
     </tbody>

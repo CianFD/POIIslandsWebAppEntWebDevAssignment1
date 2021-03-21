@@ -16,10 +16,16 @@ const POIs = {
     handler: async function(request, h) {
       const pois = await POI.find().populate("creator").lean();
       return h.view("report", {
-        title: "POIs Added",
+        title: "Islands Added",
         pois: pois
       });
     }
+  },
+  showAddPOI: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("add", { title: "Add an Island" });
+    },
   },
   addPOI: {
     handler: async function(request, h) {
