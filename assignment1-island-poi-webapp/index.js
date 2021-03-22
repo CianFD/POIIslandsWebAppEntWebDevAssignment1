@@ -1,5 +1,7 @@
 "use strict";
 
+const ImageStore = require('./app/utils/image-store');
+
 const Hapi = require("@hapi/hapi");
 const Inert = require("@hapi/inert");
 const Vision = require("@hapi/vision");
@@ -10,6 +12,13 @@ require("./app/models/db");
 const env = require("dotenv");
 
 const dotenv = require("dotenv");
+
+const credentials = {
+  cloud_name: process.env.name,
+  api_key: process.env.key,
+  api_secret: process.env.secret
+};
+
 
 const result = dotenv.config();
 if (result.error) {
@@ -26,6 +35,9 @@ async function init() {
   await server.register(Vision);
   await server.register(Cookie);
   server.validator(require("@hapi/joi"));
+
+  ImageStore.configure(credentials);
+
   server.views({
     engines: {
       hbs: require("handlebars"),

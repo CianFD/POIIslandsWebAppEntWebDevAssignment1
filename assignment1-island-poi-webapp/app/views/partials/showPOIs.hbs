@@ -1,27 +1,24 @@
-<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
-  <table class="uk-table">
-    <caption>
-      The Islands of Ireland - Places of Interest
-    </caption>
-    <thead>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th></th>
-    </thead>
-    <tbody class="uk-text-left">
-      {{#each pois}}
-        <tr>
-          <td>{{name}}</td>
-          <td>{{description}}</td>
-          <td>{{category}}</td>
-          <td>
-              <a href="/editPOI" class="uk-card uk-card-small uk-card-hover uk-padding-small">
-                  <i class="fad fa-edit-fa-3x" style="color:rgb(72,215,9)" title="Edit POI" pos="bottom" uk-tooltip></i>
-              </a>
-          </td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+<div class="uk-container uk-padding-small">
+  <div class="uk-text-left" uk-grid>
+     <div class="uk-card uk-card-default uk-card-body">
+          <h1 class="uk-heading-medium">
+              The Islands of Ireland
+          </h1>
+          <body>
+              {{#each pois}}
+                  <p>{{name}} {{category}}</p><br>
+                  <p>{{description}}</p><br>
+                  <div class="uk-card uk-card-default uk-card-small uk-text-center uk-text-baseline uk-animation-scale-up">
+                     <div class="uk-card-media-left">
+                        <img src="{{url}}">
+                     </div>
+                     <div class="uk-card-media-right">
+                        <p> {{public_id}}</p>
+                        <a href="/deleteimage/{{public_id}}" uk-icon="icon: trash"></a>
+                     </div>
+                  </div>
+              {{/each}}
+          </body>
+     </div>
+  </div>
 </div>
