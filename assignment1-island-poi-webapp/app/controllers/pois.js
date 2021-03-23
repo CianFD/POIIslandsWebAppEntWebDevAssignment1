@@ -1,4 +1,7 @@
 "use strict";
+
+const Joi = require("@hapi/joi");
+
 const POI = require("../models/poi");
 const User = require("../models/user");
 const Gallery = require("../controllers/gallery");
@@ -58,6 +61,79 @@ const POIs = {
       output: 'data',
       maxBytes: 209715200,
       parse: true
+    }
+  },
+  showEditPOI: {
+    auth: false,
+    handler: function (request, h) {
+      return h.view("editPOI", { title: "Edit an Island" });
+    },
+  },
+  editPOI: {
+    validate: {
+      payload: {
+        name: Joi.string().required(),
+        description: Joi.string().required(),
+        category: Joi.string().required(),
+      },
+      options: {
+        abortEarly: false,
+      },
+      failAction: function (request, h, error) {
+        return h
+          .view("editPOI", {
+            title: "Change Failed",
+            errors: error.details,
+          })
+          .takeover()
+          .code(400);
+      },
+    },
+    handler: async function (request, h) {
+      try {
+        const poiEdit = request.payload;
+        const id = poiEdit.id;
+        const poi = await poi.findById(id);
+        poi.name = poiEdit.name;
+        poi.description = poiEdit.description;
+        poi.category = poiEdit.category;
+        await poi.save();
+        return h.redirect("/report");
+      } catch (err) {
+        return h.view("report", { errors: [{ message: err.message }] });
+      }
+    },
+  },
+  deletePOI: {
+    validate: {
+      payload: {
+        name: Joi.string().required(),
+        description: Joi.string().required(),
+        category: Joi.string().required(),
+      },
+      options: {
+        abortEarly: false,
+      },
+      failAction: function (request, h, error) {
+        return h
+          .view("report", {
+            title: "Unable to Delete",
+            errors: error.details,
+          })
+          .takeover()
+          .code(400);
+      },
+    },
+    handler: async function (request, h) {
+      try {
+        const poiDelete = request.payload;
+        const id = poiDelete.id;
+        const poi = await poi.findById(id);
+        await poi.delete();
+        return h.redirect("/report");
+      } catch (err) {
+        return h.view("report", { errors: [{ message: err.message }] });
+      }
     }
   }
 };

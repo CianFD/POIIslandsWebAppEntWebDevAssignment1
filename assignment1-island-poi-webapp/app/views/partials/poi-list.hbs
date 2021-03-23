@@ -18,8 +18,16 @@
           <td>{{description}}</td>
           <td>{{category}}</td>
           <td> {{creator.firstName}} {{creator.lastName}} </td>
-          <td></td>
-          <td></td>
+          <td>
+              <a href="/showEditPOI" class="uk-card uk-card-small uk-card-hover uk-padding-small">
+                 <i class="fas fa-edit fa-3x" style="color:rgb(14, 168, 160)" title="Edit POI" pos="bottom" uk-tooltip></i>
+              </a>
+          </td>
+          <td>
+              <a href="/deletePOI/{{id}}" class="uk-card uk-card-small uk-card-hover uk-padding-small">
+                  <i class="fas fa-trash fa-3x" style="color:rgb(14, 168, 160)" title="Delete" pos="bottom" uk-tooltip></i>
+              </a>
+          </td>
         </tr>
       {{/each}}
     </tbody>
