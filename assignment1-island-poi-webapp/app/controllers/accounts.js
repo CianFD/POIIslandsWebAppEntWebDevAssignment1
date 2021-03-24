@@ -1,4 +1,5 @@
 "use strict";
+
 const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");

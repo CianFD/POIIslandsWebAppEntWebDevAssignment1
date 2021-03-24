@@ -11,7 +11,7 @@ const Admins = {
   adminDashboard: {
     auth: false,
     handler: async function (request, h) {
-      const pois = await POI.find().populate().lean();
+      const pois = await POI.find().populate("creator").lean();
       const categories = await Category.find().populate().lean();
       const users = await User.find().populate().lean();
       return h.view("adminDashboard", {
@@ -122,6 +122,17 @@ const Admins = {
       return h.redirect("/");
     },
   },
+  deleteUser: {
+    handler: async function (request, h) {
+      try {
+        const user = await User.findById(request.params._id);
+        await user.delete();
+        return h.redirect("/adminDashboard");
+      } catch (err) {
+        return h.view("adminDashboard", { errors: [{ message: err.message }] });
+      }
+    }
+  }
 };
 
 module.exports = Admins;

@@ -21,6 +21,7 @@ module.exports = [
   { method: "GET", path: "/adminLogout", config: Admins.adminLogout },
   { method: "POST", path: "/adminSignup", config: Admins.adminSignup },
   { method: "POST", path: "/adminLogin", config: Admins.adminLogin },
+  { method: "GET", path: "/deleteUser/{_id}", config: Admins.deleteUser },
 
   { method: "GET", path: "/home", config: POIs.home },
   { method: "GET", path: "/add", config: POIs.showAddPOI },
