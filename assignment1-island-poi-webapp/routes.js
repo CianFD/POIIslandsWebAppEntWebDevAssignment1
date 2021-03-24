@@ -31,7 +31,7 @@ module.exports = [
 
   { method: "GET", path: "/image-gallery", config: Gallery.gallery },
   { method: 'POST', path: "/uploadfile", config: Gallery.uploadFile },
-  { method: 'GET', path: "/deleteimage/{_id}", config: Gallery.deleteImage },
+  { method: 'GET', path: "/deleteimage/{id}", config: Gallery.deleteImage },
 
   {
     method: "GET",
