@@ -4,23 +4,28 @@ const Joi = require("@hapi/joi");
 
 const POI = require("../models/poi");
 const User = require("../models/user");
+const Category = require("../models/category");
 
 const POIs = {
   home: {
     handler: async function(request, h) {
       const pois = await POI.find().populate().lean();
+      const categories = await Category.find().populate().lean();
       return h.view("home", {
         title: "Home",
-        pois: pois
+        pois: pois,
+        category: categories
       });
     }
   },
   report: {
     handler: async function(request, h) {
       const pois = await POI.find().populate("creator").lean();
+      const categories = await Category.find().populate().lean();
       return h.view("report", {
         title: "Islands Added",
-        pois: pois
+        pois: pois,
+        category: categories
       });
     }
   },
@@ -36,10 +41,14 @@ const POIs = {
         const id = request.auth.credentials.id;
         const user = await User.findById(id);
         const data = request.payload;
+        const rawCategory = request.payload.category;
+        const category = await Category.findOne({
+          name: rawCategory
+        });
         const newPOI = new POI({
           name: data.name,
           description: data.description,
-          category: data.category,
+          category: category._id,
           creator: user._id
         });
         await newPOI.save();
