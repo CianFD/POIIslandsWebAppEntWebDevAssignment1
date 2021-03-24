@@ -1,8 +1,8 @@
 <div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
   <table class="uk-table">
-    <caption>
-      POIs Added
-    </caption>
+    <h1 class="uk-heading-small">
+        Islands Added
+    </h1>
     <thead>
       <th>Name</th>
       <th>Description</th>
@@ -19,12 +19,12 @@
           <td>{{category}}</td>
           <td> {{creator.firstName}} {{creator.lastName}} </td>
           <td>
-              <a href="/showEditPOI" class="uk-card uk-card-small uk-card-hover uk-padding-small">
-                 <i class="fas fa-edit fa-3x" style="color:rgb(14, 168, 160)" title="Edit POI" pos="bottom" uk-tooltip></i>
+              <a href="/showEditPOI/{{_id}}" class="uk-card uk-card-small uk-card-hover uk-padding-small">
+                 <i class="fas fa-edit fa-3x" style="color:rgb(14, 168, 160)" title="Edit POI {{_id}}" pos="bottom" uk-tooltip></i>
               </a>
           </td>
           <td>
-              <a href="/deletePOI/{{id}}" class="uk-card uk-card-small uk-card-hover uk-padding-small">
+              <a href="/deletePOI/{{_id}}" class="uk-card uk-card-small uk-card-hover uk-padding-small">
                   <i class="fas fa-trash fa-3x" style="color:rgb(14, 168, 160)" title="Delete" pos="bottom" uk-tooltip></i>
               </a>
           </td>

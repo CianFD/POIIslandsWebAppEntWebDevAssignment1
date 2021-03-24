@@ -1,24 +1,19 @@
-<div class="uk-container uk-padding-small">
-  <div class="uk-text-left" uk-grid>
-     <div class="uk-card uk-card-default uk-card-body">
-          <h1 class="uk-heading-medium">
-              The Islands of Ireland
-          </h1>
-          <body>
-              {{#each pois}}
-                  <p>{{name}} {{category}}</p><br>
-                  <p>{{description}}</p><br>
-                  <div class="uk-card uk-card-default uk-card-small uk-text-center uk-text-baseline uk-animation-scale-up">
-                     <div class="uk-card-media-left">
-                        <img src="{{url}}">
-                     </div>
-                     <div class="uk-card-media-right">
-                        <p> {{public_id}}</p>
-                        <a href="/deleteimage/{{public_id}}" uk-icon="icon: trash"></a>
-                     </div>
-                  </div>
-              {{/each}}
-          </body>
-     </div>
-  </div>
+<div class="uk-margin uk-width-2xlarge uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+  <table class="uk-table">
+      <h1 class="uk-heading-small">
+          The Islands of Ireland
+      </h1>
+      <thead>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Description</th>
+      </thead>
+      {{#each pois}}
+          <tbody>
+              <td>{{name}}</td>
+              <td>{{category}}</td>
+              <td>{{description}}</td>
+          </tbody>
+      {{/each}}
+  </table>
 </div>

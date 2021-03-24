@@ -18,8 +18,9 @@ module.exports = [
   { method: "GET", path: "/add", config: POIs.showAddPOI },
   { method: "POST", path: "/addPOI", config: POIs.addPOI },
   { method: "GET", path: "/report", config: POIs.report },
-  { method: "GET", path: "/showEditPOI", config: POIs.showEditPOI },
-
+  { method: "GET", path: "/showEditPOI/{_id}", config: POIs.showEditPOI },
+  { method: "POST", path: "/editPOI/{_id}", config: POIs.editPOI },
+  { method: "GET", path: "/deletePOI/{_id}", config: POIs.deletePOI },
 
   { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
   { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage },

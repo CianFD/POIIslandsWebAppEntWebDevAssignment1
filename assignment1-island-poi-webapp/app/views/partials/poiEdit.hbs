@@ -1,4 +1,4 @@
-<form action="/editPOI" method="POST">
+<form action="/editPOI/{{poi._id}}" method="POST">
     <div class="uk-margin">
         <div class="uk-inline uk-width-1-1">
             <label class="uk-form-label" for="form-stacked-text">Name</label>
@@ -11,12 +11,8 @@
             <input class="uk-input uk-form-small" type="text" name="description" value="{{poi.description}}">
         </div>
     </div>
-    <div class="uk-inline uk-width-1-1">
-        <label class="uk-form-label" for="form-stacked-text">Category</label>
-        <label><input class="uk-radio" type="radio" name="category" value="North"> North </label>
-        <label><input class="uk-radio" type="radio" name="category" value="South"> South </label>
-        <label><input class="uk-radio" type="radio" name="category" value="East"> East </label>
-        <label><input class="uk-radio" type="radio" name="category" value="West"> West </label>
+    <div class="uk-margin">
+        <p>{{poi._id}}</p>
     </div>
     <div class="uk-inline uk-width-1-1">
         <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Change</button>
