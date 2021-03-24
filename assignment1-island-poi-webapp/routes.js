@@ -15,6 +15,7 @@ module.exports = [
   { method: 'GET', path: '/settings', config: Accounts.showSettings },
   { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
+  { method: "GET", path: "/adminDashboard", config: Admins.adminDashboard },
   { method: "GET", path: "/showAdminSignup", config: Admins.showAdminSignup },
   { method: "GET", path: "/showAdminLogin", config: Admins.showAdminLogin },
   { method: "GET", path: "/adminLogout", config: Admins.adminLogout },

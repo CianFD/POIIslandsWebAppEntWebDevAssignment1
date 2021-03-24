@@ -1,11 +1,27 @@
 "use strict";
 
-const User = require("../models/user");
 const Boom = require("@hapi/boom");
 const Joi = require("@hapi/joi");
 const Admin = require("../models/admin")
+const POI = require("../models/poi");
+const User = require("../models/user");
+const Category = require("../models/category");
 
 const Admins = {
+  adminDashboard: {
+    auth: false,
+    handler: async function (request, h) {
+      const pois = await POI.find().populate().lean();
+      const categories = await Category.find().populate().lean();
+      const users = await User.find().populate().lean();
+      return h.view("adminDashboard", {
+        title: "Administrator Dashboard",
+        pois: pois,
+        category: categories,
+        user: users
+      });
+    }
+  },
   showAdminSignup: {
     auth: false,
     handler: function (request, h) {
@@ -54,7 +70,7 @@ const Admins = {
         request.cookieAuth.set({ id: admin.id });
         return h.redirect("/adminDashboard");
       } catch (err) {
-        return h.view("signup", { errors: [{ message: err.message }] });
+        return h.view("adminSignup", { errors: [{ message: err.message }] });
       }
     },
   },
