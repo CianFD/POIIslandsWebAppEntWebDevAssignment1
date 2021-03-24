@@ -1,0 +1,20 @@
+<div class="uk-flex uk-flex-center uk-flex-middle uk-grid-small" uk-grid>
+    {{> title-card title="Image Gallery" subTitle="View Island Images/Upload Your Own"}}
+    {{> main-menu }}
+</div>
+
+<h1 class="uk-heading-primary">Image Gallery</h1>
+
+<div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+    <div>
+        {{> upload }}
+    </div>
+</div>
+
+<div class="uk-container uk-padding-small">
+    <div class="uk-child-width-1-4@s uk-flex uk-flex-center" uk-grid uk-height-match="target: .uk-card">
+        {{#each images}}
+            {{> card}}
+        {{/each}}
+    </div>
+</div>

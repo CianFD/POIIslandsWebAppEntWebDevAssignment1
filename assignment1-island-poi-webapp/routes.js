@@ -22,8 +22,9 @@ module.exports = [
   { method: "POST", path: "/editPOI/{_id}", config: POIs.editPOI },
   { method: "GET", path: "/deletePOI/{_id}", config: POIs.deletePOI },
 
+  { method: "GET", path: "/image-gallery", config: Gallery.gallery },
   { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
-  { method: 'GET', path: '/deleteimage/{id}', config: Gallery.deleteImage },
+  { method: 'GET', path: '/deleteimage/{public_id}', config: Gallery.deleteImage },
 
   {
     method: "GET",
