@@ -11,8 +11,23 @@
             <input class="uk-input uk-form-small" type="text" name="description" value="{{poi.description}}">
         </div>
     </div>
-    <div class="uk-margin">
-        <p>{{poi._id}}</p>
+    <div class="uk-inline uk-width-1-1">
+        <label class="uk-form-label" for="form-stacked-text">Latitude</label>
+        <input class="uk-input uk-form-small" type="decimal" name="latitude" value="{{poi.latitude}}">
+    </div>
+    <div class="uk-inline uk-width-1-1">
+        <label class="uk-form-label" for="form-stacked-text">Longitude</label>
+        <input class="uk-input uk-form-small" type="decimal" name="longitude" value="{{poi.longitude}}">
+    </div>
+    <div class="uk-margin uk-width-1-1">
+        <label class="uk-form-label" for="form-stacked-text">Category</label>
+        <div class="uk-form-controls ">
+            {{#each category }}
+                <label> <input class="uk-radio" type="radio" name="category" value="{{category.name}}">
+                    {{category.name}}
+                </label> <br>
+            {{/each}}
+        </div>
     </div>
     <div class="uk-inline uk-width-1-1">
         <button class="submit uk-button uk-button-primary uk-button-large uk-width-1-1">Change</button>

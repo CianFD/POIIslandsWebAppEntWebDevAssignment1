@@ -9,30 +9,34 @@ const Category = require("../models/category");
 const POIs = {
   home: {
     handler: async function(request, h) {
-      const pois = await POI.find().populate().lean();
-      const categories = await Category.find().populate().lean();
+      const pois = await POI.find().populate("category").lean();
+      //const categories = await Category.find().lean();
       return h.view("home", {
         title: "Home",
         pois: pois,
-        category: categories
+        //category: categories
       });
     }
   },
   report: {
     handler: async function(request, h) {
-      const pois = await POI.find().populate("creator").lean();
-      const categories = await Category.find().populate().lean();
+      const pois = await POI.find().populate("creator").populate("category").lean();
+      //const categories = await Category.find().lean();
       return h.view("report", {
         title: "Islands Added",
         pois: pois,
-        category: categories
+        //category: categories
       });
     }
   },
   showAddPOI: {
     auth: false,
-    handler: function (request, h) {
-      return h.view("add", { title: "Add an Island" });
+    handler: async function (request, h) {
+      const categories = await Category.find().populate().lean();
+      return h.view("add", {
+        title: "Add an Island",
+        category: categories
+      });
     },
   },
   addPOI: {
@@ -49,7 +53,9 @@ const POIs = {
           name: data.name,
           description: data.description,
           category: category._id,
-          creator: user._id
+          creator: user._id,
+          latitude: data.latitude,
+          longitude: data.longitude
         });
         await newPOI.save();
         return h.redirect("/home");
@@ -74,7 +80,9 @@ const POIs = {
     validate: {
       payload: {
         name: Joi.string().required(),
-        description: Joi.string().required()
+        description: Joi.string().required(),
+        latitude: Joi.string().required(),
+        longitude: Joi.string().required()
       },
       options: {
         abortEarly: false,
@@ -95,6 +103,8 @@ const POIs = {
         const poi = await POI.findById(request.params._id);
         poi.name = poiEdit.name;
         poi.description = poiEdit.description;
+        poi.latitude = poiEdit.latitude;
+        poi.longitude = poiEdit.longitude;
         await poi.save();
         return h.redirect("/report");
       } catch (err) {

@@ -6,6 +6,8 @@
     <thead>
       <th>Name</th>
       <th>Description</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
       <th>Category</th>
       <th>Creator</th>
       <th></th>
@@ -16,7 +18,9 @@
         <tr>
           <td>{{name}}</td>
           <td>{{description}}</td>
-          <td>{{category}}</td>
+          <td>{{latitude}}</td>
+          <td>{{longitude}}</td>
+          <td>{{category.name}}</td>
           <td> {{creator.firstName}} {{creator.lastName}} </td>
           <td>
               <a href="/showEditPOI/{{_id}}" class="uk-card uk-card-small uk-card-hover uk-padding-small">

@@ -6,12 +6,16 @@
       <thead>
           <th>Name</th>
           <th>Category</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
           <th>Description</th>
       </thead>
       {{#each pois}}
           <tbody>
               <td>{{name}}</td>
-              <td>{{category}}</td>
+              <td>{{category.name}}</td>
+              <td>{{latitude}}</td>
+              <td>{{longitude}}</td>
               <td>{{description}}</td>
           </tbody>
       {{/each}}

@@ -1,0 +1,113 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    "marge": {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret"
+    },
+    "bart": {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  },
+  "categories": {
+    "_model": "Category",
+    "north": {
+      "name": "North"
+    },
+    "south": {
+      "name": "South"
+    },
+    "east": {
+      "name": "East"
+    },
+    "west": {
+      "name": "West"
+    }
+  },
+  "pois": {
+    "_model": "POI",
+    "Colt Island": {
+      "name": "Colt Island",
+      "description": "A small, low-lying island lying just off the point at Skerries. Land easily on sand/shingle on SW side. The E side has reefs and breakers that should be avoided in strong NE – SE winds in spring ebb tides.",
+      "latitude": "53.5846497",
+      "longitude": "-6.08758199",
+      "category": "->categories.east",
+      "creator": "->users.homer"
+    },
+    "Saint Patrick’s Island": {
+      "name": "Saint Patrick’s Island",
+      "description": "A small island, outside Colt, known locally as Church Island. The accuracy as to whether St. Patrick ever landed here is a source of some debate. This is the jumping off point for Rockabill. Land easily at a sheltered storm beach, just W of the S tip, in almost any conditions. Landing is also possible at higher tides at a shingle cove just further E. There is a further landing place on the N facing shore near a ruined house and marked by two metal poles – a small beachlet among the rocks, for when southerlies prevail. There is the ruin of an Early Christian Church and a small monastery, which dates back to Viking times. It was important enough to merit a synod being held in 1148 in which fifteen bishops, two hundred priests, and several other clergy assisted. The church towards the E tip is still very much worth the visit. St Patrick’s Island has an internationally important breeding population of Cormorants (2001 Census) of 550 pairs. There are breeding gulls, Shags and Fulmars in summer, while geese, ducks and waders provide winter interest. There is a colony of 70-80 Grey Seals, especially during winter. The NE and eastern sides of the island catch the full ebb tide over a rocky underwater reef. Overfalls can develop, especially in S/SE winds against a spring ebb tide. In the sound between St. Patrick’s and Colt Islands, a lesser overfall can develop over a small bar that extends westwards off the corner of St. Patrick’s.",
+      "latitude": "53.58622764",
+      "longitude": "-6.0739187",
+      "category": "->categories.east",
+      "creator": "->users.homer"
+    },
+    "Shenick Island": {
+      "name": "Shenick Island",
+      "description": "Shenick is the most southerly of the inshore group and is dominated by a Martello tower at its northern end. This is a Birdwatch Ireland reserve since May 1987. Kayakers landing should be sensitive to the effects of disturbance in the breeding season (April / June). The island has both a geological and natural history interest. There are breeding Fulmar, gulls, Oystercatcher and Shelduck, while in winter the numbers of Brent Goose, Curlew, Purple Sandpiper, Ringed Plover and Short-eared Owl make the island a nationally important site. Land easily at the NW side onto a beach under the Martello tower. This beach is on the N side of a spit reaching out W towards the mainland, and is usually sheltered. The passage between Shenick Island and the mainland virtually dries out at LW.",
+      "latitude": "53.57297619",
+      "longitude": "-6.08810915",
+      "category": "->categories.east",
+      "creator": "->users.homer"
+    },
+    "Rockabill": {
+      "name": "Rockabill",
+      "description": "Rockabill is the larger of two granite rocky islets, strictly called Lighthouse Island. The smaller islet is the Bill and they are connected at LWS. They have a total area of 0.9ha above the high water mark. The lighthouse was first constructed in 1860, and was rebuilt in 1900. It was automated in April 1989. The island was designated as a Special Protection Area in 1988 and as a Statutory Refuge for Fauna under the Wildlife Act 1976. The Roseate Tern Conservation Project began in May 1989 and prevents landing in spring and early summer. Ask Birdwatch Ireland at (01) 2819878 if in doubt. Resident wardens enforce the restrictions. The Roseate Tern is an endangered species so do respect the rules. Ireland takes seriously its duty to Roseate Tern and Brent Goose, its two biggest contributions to international conservation. This conservation programme is one of the huge successes for Birdwatch Ireland. 90% of Ireland’s Roseates breed here, which represents 35% of Europe’s population, so it really is off limits in season. Landing Landing on Lighthouse Island is in the sound between the two islands onto a small pier with steps or onto rocks to the side, depending on circumstances. There is another pier with steps just further E, but which is usually more exposed. A narrow cut immediately right of this pier opens to give a convenient pool at low to half tide for landings. Beware of all landings at HWS when considerable lift can occur.",
+      "latitude": "53.59673708",
+      "longitude": "-6.0024417",
+      "category": "->categories.east",
+      "creator": "->users.marge"
+    },
+    "Small Island": {
+      "name": "Small Island",
+      "description": "Known locally (quite logically) as the Inner Island, it is low and grassy, with extensive reefs and rocky shorelines at low water. It is just accessible on foot at LW, though not easily, and it involves getting your feet wet. Landing is best on the eastern side, facing the outer island, where there is a small beach, just where the island is waisted. There is no water. In 2002, three full-blooded male goats proved quite a deterrent to would\u007Fbe landers or campers. Blowholes.",
+      "latitude": "51.82611583",
+      "longitude": "-7.99491687",
+      "category": "->categories.south",
+      "creator": "->users.marge"
+    },
+    "Rocky Island": {
+      "name": "Rocky Island",
+      "description": "Haulbowline Island is joined to the mainland near Ringaskiddy on its S side by a road bridge. The bridge spans to and from Rocky Island.  The road bisects the island.  Rocky received planning permission for use as a crematorium in late 2006.  The crematorium will be W of the road and parking E. High rocky and fortified, the summit is a big tent shaped rock in the middle.  Its triple ramparts and central citadel were a gunpowder store from 1808.  The outer trenches were lit by candles recessed into hollows in the wall for safety.  Unoccupied 1920s to 1964, Irish Steel built the bridge when it took over, and it was storage until 2001. Rocky is always landable because the bridge supports give shelter, especially on the landward Ringaskiddy side where the rocks are shelving",
+      "latitude": "51.83741484",
+      "longitude": "-8.30102961",
+      "category": "->categories.south",
+      "creator": "->users.marge"
+    },
+    "Sovereign Islands": {
+      "name": "Sovereign Islands",
+      "description": "Basically, these are two green topped rocky outcrops of islands only accessible during the most benign of weather and have “interesting” scrambling potential.  There is the remains of a structure on top the lower half, and in 2012 a fixed rope to aid in descent. The two parts are separated by a fine creek, in width about the length of a small boat.  In places the ascent requires pure rock climbing up attractive corner features.  Lovely when accessible, definitely a place to tarry a while. The landings on both islands are onto rocky platforms and on the larger and more precipitous W islet are best at either the SE or SW corner if wanting to gain direct access to the summit. Other areas are easier, such as a small inlet on the NE, but require very good rock climbing skills to progress further. The E islet is best landed on its NE corner in a small cove. The shelving rocks are slippery and covered in green algae so care required especially on the descent. Breeding colonies of Cormorants, Herring and Greater-black backed Gulls.",
+      "latitude": "51.67516445",
+      "longitude": "-8.45029511",
+      "category": "->categories.south",
+      "creator": "->users.bart"
+    },
+    "Glashedy Island": {
+      "name": "Glashedy Island",
+      "description": "3KM W of the mouth of Trawbreaga Bay, into and out of which washes a strong tide, this is a squat tower of a rocky island with access to the top limited to an airy scramble on the west side. It is said that sheep once grazed here, but certainly not now. Land easily on a gravel spit to the SE. Eider breed. Beware the skerries to E and NW. This island fits nicely into a round of Malin Head. Mind the tide flowing in or out of Trawbreaga Bay, which operates about 3 hours behind Lough Swilly and which can affect navigation approaching from north or south. Famed for its wintering geese, and its poitín-linked history.",
+      "latitude": "55.31876009",
+      "longitude": "-7.39748133",
+      "category": "->categories.north",
+      "creator": "->users.bart"
+    },
+    "Island-Reagh": {
+      "name": "Island-Reagh",
+      "description": "This low, grassy island is the furthest to seaward in Mulroy Bay and was surrounded by a barbed wire fence in 1999. The flooding tide flows strongly E past the N side. Tides flow into and out of this outer part of Mulroy Bay consistently with the rise and fall of the tides by the shore, from about HW Galway -0520 to +0100.",
+      "latitude": "55.19792383",
+      "longitude": "-7.79817591",
+      "category": "->categories.north",
+      "creator": "->users.bart"
+    }
+  }
+}
