@@ -11,6 +11,8 @@ const Joi = require("@hapi/joi");
 require("./app/models/db");
 const env = require("dotenv");
 
+const db = require("./app/models/db");
+
 const dotenv = require("dotenv");
 
 const credentials = {
@@ -67,5 +69,7 @@ process.on("unhandledRejection", (err) => {
   console.log(err);
   process.exit(1);
 });
+
+
 
 init();
