@@ -1,6 +1,7 @@
 "use strict";
 
 const Accounts = require("./app/controllers/accounts");
+const Admins = require("./app/controllers/admins")
 const POIs = require("./app/controllers/pois");
 const Gallery = require("./app/controllers/gallery");
 
@@ -14,6 +15,12 @@ module.exports = [
   { method: 'GET', path: '/settings', config: Accounts.showSettings },
   { method: 'POST', path: '/settings', config: Accounts.updateSettings },
 
+  { method: "GET", path: "/showAdminSignup", config: Admins.showAdminSignup },
+  { method: "GET", path: "/showAdminLogin", config: Admins.showAdminLogin },
+  { method: "GET", path: "/adminLogout", config: Admins.adminLogout },
+  { method: "POST", path: "/adminSignup", config: Admins.adminSignup },
+  { method: "POST", path: "/adminLogin", config: Admins.adminLogin },
+
   { method: "GET", path: "/home", config: POIs.home },
   { method: "GET", path: "/add", config: POIs.showAddPOI },
   { method: "POST", path: "/addPOI", config: POIs.addPOI },
@@ -23,8 +30,8 @@ module.exports = [
   { method: "GET", path: "/deletePOI/{_id}", config: POIs.deletePOI },
 
   { method: "GET", path: "/image-gallery", config: Gallery.gallery },
-  { method: 'POST', path: '/uploadfile', config: Gallery.uploadFile },
-  { method: 'GET', path: '/deleteimage/{public_id}', config: Gallery.deleteImage },
+  { method: 'POST', path: "/uploadfile", config: Gallery.uploadFile },
+  { method: 'GET', path: "/deleteimage/{_id}", config: Gallery.deleteImage },
 
   {
     method: "GET",
